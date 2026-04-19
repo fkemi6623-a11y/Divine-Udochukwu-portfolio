@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Divine Udochukwu — CX & Product Support Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --navy-light: #162336;
+    --cream: #f5f0e8;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --text-dark: #0d1b2e;
+    --text-mid: #4a5568;
+    --text-light: #94a3b8;
+    --white: #ffffff;
+    --card-bg: #ffffff;
+    --border: rgba(201,168,76,0.2);
+    --shadow: 0 4px 30px rgba(13,27,46,0.08);
+    --shadow-hover: 0 12px 50px rgba(13,27,46,0.16);
+    --radius: 12px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* ── NAVBAR ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,27,46,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    padding: 0 5%;
+    height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: all .3s ease;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--cream);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(245,240,232,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--cream); display: block; transition: .3s; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 100px 8% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content { position: relative; max-width: 800px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    animation: fadeSlideUp .7s ease both;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  h1.hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    color: var(--cream);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+    animation: fadeSlideUp .7s .1s ease both;
+  }
+  h1.hero-name em { color: var(--gold); font-style: italic; }
+  .hero-title {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(245,240,232,0.6);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 2.2rem;
+    animation: fadeSlideUp .7s .2s ease both;
+  }
+  .hero-headline {
+    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    color: rgba(245,240,232,0.9);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 620px;
+    margin-bottom: 3rem;
+    animation: fadeSlideUp .7s .3s ease both;
+  }
+  .hero-headline strong { color: var(--gold); font-weight: 600; }
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeSlideUp .7s .4s ease both;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all .25s;
+    letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,168,76,0.35); }
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border: 1.5px solid rgba(245,240,232,0.3);
+    transition: all .25s;
+    letter-spacing: 0.02em;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(245,240,232,0.4);
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: fadeIn 1s 1s both;
+  }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.5)); animation: scrollPulse 2s infinite; }
+  @keyframes scrollPulse { 0%{height:40px;opacity:1} 100%{height:60px;opacity:0} }
+
+  /* ── SECTIONS COMMON ── */
+  section { padding: 100px 8%; }
+  .section-tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+  }
+  .section-title.light { color: var(--cream); }
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 560px;
+    line-height: 1.75;
+  }
+  .section-desc.light { color: rgba(245,240,232,0.7); }
+  .divider {
+    width: 48px; height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 3rem;
+  }
+  .about-visual {
+    position: relative;
+    height: 420px;
+  }
+  .about-card-main {
+    position: absolute; top: 0; left: 0; right: 60px; bottom: 60px;
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    overflow: hidden;
+  }
+  .about-card-main::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.15), transparent 70%);
+  }
+  .about-initial {
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    font-weight: 800;
+    color: rgba(201,168,76,0.12);
+    line-height: 1;
+    position: absolute; top: 1rem; right: 1.5rem;
+    font-style: italic;
+  }
+  .about-card-stat {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .about-card-stat-label {
+    color: rgba(245,240,232,0.6);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    font-weight: 400;
+  }
+  .about-card-accent {
+    position: absolute; bottom: 0; right: 0;
+    width: 200px; height: 200px;
+    background: var(--gold);
+    border-radius: 16px;
+    padding: 1.8rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .about-card-accent-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .about-card-accent-label {
+    font-size: 0.78rem;
+    color: rgba(13,27,46,0.7);
+    font-weight: 500;
+    margin-top: 0.3rem;
+  }
+  .about-text p { color: var(--text-mid); font-size: 1.02rem; line-height: 1.8; margin-bottom: 1.2rem; }
+  .about-list { list-style: none; margin: 1.5rem 0; }
+  .about-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    color: var(--text-dark);
+    font-size: 0.97rem;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+  }
+  .about-list li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    font-size: 1rem;
+    margin-top: 1px;
+  }
+  .about-intersection {
+    display: inline-flex; gap: 0.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .intersection-tag {
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .tag-support { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); }
+  .tag-product { background: rgba(13,27,46,0.08); color: var(--navy); border: 1px solid rgba(13,27,46,0.15); }
+  .tag-growth { background: rgba(201,168,76,0.2); color: #8a6e1a; border: 1px solid rgba(201,168,76,0.4); }
+
+  /* ── WHAT I DO ── */
+  #services {
+    background: var(--navy);
+    position: relative;
+    overflow: hidden;
+  }
+  #services::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.06), transparent 70%);
+    pointer-events: none;
+  }
+  .services-header { text-align: center; margin-bottom: 4rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .service-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: var(--radius);
+    padding: 2.2rem 2rem;
+    transition: all .3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .service-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-4px); }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon {
+    width: 46px; height: 46px;
+    background: rgba(201,168,76,0.12);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.4rem;
+    font-size: 1.3rem;
+  }
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.7rem;
+  }
+  .service-desc { font-size: 0.87rem; color: rgba(245,240,232,0.5); line-height: 1.6; }
+
+  /* ── TOOLS ── */
+  #tools { background: var(--cream); }
+  .tools-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+  .tool-group {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: box-shadow .3s;
+  }
+  .tool-group:hover { box-shadow: var(--shadow-hover); }
+  .tool-group-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tool-group-label::before { content: ''; width: 20px; height: 2px; background: var(--gold); display: block; }
+  .tool-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .tool-tag {
+    background: var(--cream);
+    border: 1px solid rgba(13,27,46,0.1);
+    color: var(--text-dark);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all .2s;
+  }
+  .tool-tag:hover { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--navy); }
+  .exp-stack { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 4rem; }
+  .exp-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: var(--radius);
+    padding: 2.2rem 2.5rem;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity .3s;
+  }
+  .exp-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-3px); }
+  .exp-card:hover::before { opacity: 1; }
+
+  .exp-date-box {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .exp-date-from {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    display: block;
+    white-space: nowrap;
+  }
+  .exp-date-sep {
+    display: block;
+    width: 20px; height: 1px;
+    background: rgba(201,168,76,0.4);
+    margin: 6px auto;
+  }
+  .exp-date-to {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(201,168,76,0.6);
+    letter-spacing: 0.06em;
+    display: block;
+    white-space: nowrap;
+  }
+
+  .exp-role {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+  .exp-company {
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.2rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .remote-badge {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.25);
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+  }
+  .exp-list { list-style: none; }
+  .exp-list li {
+    color: rgba(245,240,232,0.65);
+    font-size: 0.88rem;
+    margin-bottom: 0.6rem;
+    display: flex; align-items: flex-start; gap: 10px;
+    line-height: 1.55;
+  }
+  .exp-list li::before { content: '›'; color: var(--gold); flex-shrink: 0; font-size: 1.1rem; margin-top: -1px; }
+
+  @media (max-width: 700px) {
+    .exp-card { grid-template-columns: 1fr; gap: 1.2rem; }
+    .exp-date-box { display: inline-flex; gap: 8px; align-items: center; width: auto; }
+    .exp-date-sep { width: 1px; height: 14px; margin: 0; }
+  }
+
+  /* ── CASE STUDY ── */
+  #casestudy { background: var(--cream); }
+  .cs-header { margin-bottom: 4rem; }
+  .cs-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(13,27,46,0.06);
+    border: 1px solid rgba(13,27,46,0.1);
+    color: var(--navy);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .cs-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  .cs-subtitle { font-size: 1rem; color: var(--text-mid); max-width: 540px; }
+  .cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-bottom: 1.2rem; }
+  .cs-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.8rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all .3s;
+  }
+  .cs-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+  .cs-card.featured {
+    background: var(--navy);
+    grid-column: span 3;
+    display: flex; flex-direction: column;
+    gap: 0; padding: 0; overflow: hidden;
+  }
+  .cs-featured-top {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .cs-featured-info {
+    padding: 2.2rem 2.5rem;
+    border-right: 1px solid rgba(201,168,76,0.12);
+  }
+  .cs-featured-mockup-wrap {
+    padding: 2rem 2rem;
+    background: rgba(255,255,255,0.02);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .cs-featured-bottom {
+    padding: 1.8rem 2.5rem;
+    border-top: 1px solid rgba(201,168,76,0.12);
+    background: rgba(201,168,76,0.04);
+  }
+  .cs-card-icon {
+    width: 40px; height: 40px;
+    background: var(--cream);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; margin-bottom: 1rem;
+  }
+  .cs-card.featured .cs-card-icon { background: rgba(201,168,76,0.15); }
+  .cs-card-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .cs-card-body { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; }
+  .cs-card.featured .cs-card-body { color: rgba(245,240,232,0.7); }
+  .cs-card.featured .cs-card-title { color: var(--gold); }
+  .cs-card.dark { background: var(--navy); }
+  .cs-card.dark .cs-card-body { color: rgba(245,240,232,0.7); }
+  .cs-card.dark .cs-card-title { color: var(--gold); }
+  .cs-card.dark .cs-card-icon { background: rgba(201,168,76,0.15); }
+  /* Mockup */
+  .cs-mockup {
+    background: #0a1525;
+    border-radius: 10px;
+    border: 1px solid rgba(201,168,76,0.2);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .mockup-titlebar {
+    background: #111e30;
+    padding: 10px 14px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .mockup-dots { display: flex; gap: 5px; }
+  .mockup-dot { width: 9px; height: 9px; border-radius: 50%; }
+  .mockup-dot.red { background: #ff5f57; }
+  .mockup-dot.yellow { background: #febc2e; }
+  .mockup-dot.green { background: #28c840; }
+  .mockup-url {
+    flex: 1; background: rgba(255,255,255,0.06); border-radius: 5px;
+    padding: 4px 10px; font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; color: rgba(245,240,232,0.4); letter-spacing: 0.04em;
+  }
+  .mockup-body { padding: 14px; }
+  .mockup-sidebar-layout { display: flex; gap: 10px; }
+  .mockup-sidebar {
+    width: 56px; flex-shrink: 0;
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .mockup-nav-item {
+    height: 28px; border-radius: 5px;
+    background: rgba(201,168,76,0.06);
+  }
+  .mockup-nav-item.active { background: rgba(201,168,76,0.18); }
+  .mockup-main { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .mockup-stat-row { display: flex; gap: 6px; }
+  .mockup-stat {
+    flex: 1; height: 42px; border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 3px; padding: 4px;
+  }
+  .mockup-stat-val {
+    width: 55%; height: 7px; background: var(--gold); border-radius: 3px; opacity: 0.7;
+  }
+  .mockup-stat-lbl {
+    width: 80%; height: 4px; background: rgba(245,240,232,0.1); border-radius: 2px;
+  }
+  .mockup-chart {
+    height: 60px; border-radius: 6px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.08);
+    display: flex; align-items: flex-end; gap: 4px; padding: 8px 10px 6px;
+  }
+  .mockup-bar-item {
+    flex: 1; border-radius: 3px 3px 0 0;
+    background: rgba(201,168,76,0.25);
+  }
+  .mockup-bar-item.hi { background: rgba(201,168,76,0.6); }
+  .mockup-list-row { display: flex; flex-direction: column; gap: 4px; }
+  .mockup-list-item {
+    height: 16px; border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .persona-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all .3s;
+  }
+  .persona-card:hover { box-shadow: var(--shadow-hover); }
+  .persona-avatar {
+    width: 56px; height: 56px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--navy);
+    font-weight: 700;
+  }
+  .persona-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); font-weight: 600; }
+  .persona-role { font-size: 0.82rem; color: var(--text-mid); margin-bottom: 0.7rem; }
+  .persona-goals { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .persona-goal-tag {
+    background: var(--cream);
+    border: 1px solid rgba(13,27,46,0.1);
+    color: var(--text-dark);
+    font-size: 0.75rem;
+    padding: 4px 10px; border-radius: 6px; font-weight: 500;
+  }
+  .cs-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .feature-list { list-style: none; }
+  .feature-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 0.88rem; color: var(--text-mid);
+    margin-bottom: 0.75rem; line-height: 1.5;
+  }
+  .feature-list li .fi { flex-shrink: 0; font-size: 1rem; margin-top: 1px; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--navy); }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3.5rem;
+  }
+  .testi-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: var(--radius);
+    padding: 2.2rem;
+    transition: all .3s;
+    position: relative;
+  }
+  .testi-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-3px); }
+  .testi-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: rgba(201,168,76,0.3);
+    line-height: 0.8;
+    margin-bottom: 1.2rem;
+  }
+  .testi-text { font-size: 0.9rem; color: rgba(245,240,232,0.7); line-height: 1.75; margin-bottom: 1.8rem; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--navy); font-weight: 700;
+  }
+  .testi-name { font-size: 0.88rem; font-weight: 600; color: var(--cream); }
+  .testi-role { font-size: 0.75rem; color: rgba(245,240,232,0.45); }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--cream); }
+  .skills-header { text-align: center; margin-bottom: 3.5rem; }
+  .skills-cloud {
+    display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+    max-width: 700px; margin: 0 auto;
+  }
+  .skill-badge {
+    padding: 12px 24px;
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: all .25s;
+    cursor: default;
+    border: 1.5px solid;
+  }
+  .skill-badge.dark { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+  .skill-badge.gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .skill-badge.outline { background: transparent; color: var(--navy); border-color: rgba(13,27,46,0.25); }
+  .skill-badge:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13,27,46,0.12); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--navy); position: relative; overflow: hidden; }
+  #contact::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 50% 80% at 80% 50%, rgba(201,168,76,0.07), transparent 70%),
+      radial-gradient(ellipse 30% 40% at 10% 80%, rgba(201,168,76,0.04), transparent 60%);
+  }
+  .contact-content { position: relative; text-align: center; max-width: 680px; margin: 0 auto; }
+  .contact-availability {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(40,200,64,0.1);
+    border: 1px solid rgba(40,200,64,0.25);
+    color: #5edf72;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    letter-spacing: 0.04em;
+  }
+  .contact-availability::before { content: ''; width: 7px; height: 7px; background: #28c840; border-radius: 50%; animation: pulse 2s infinite; }
+  .contact-cta-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+  .contact-cta-text em { color: var(--gold); font-style: italic; }
+  .contact-desc { font-size: 0.95rem; color: rgba(245,240,232,0.55); margin-bottom: 2.5rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all .25s;
+  }
+  .contact-link.email { background: var(--gold); color: var(--navy); }
+  .contact-link.email:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(201,168,76,0.3); }
+  .contact-link.linkedin { background: rgba(255,255,255,0.07); color: var(--cream); border: 1.5px solid rgba(255,255,255,0.15); }
+  .contact-link.linkedin:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070f1a;
+    padding: 2rem 8%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    color: rgba(245,240,232,0.7);
+    font-size: 0.9rem;
+  }
+  .footer-name span { color: var(--gold); }
+  .footer-copy { font-size: 0.78rem; color: rgba(245,240,232,0.3); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left {
+    opacity: 0; transform: translateX(-32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0; transform: translateX(32px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+  .delay-1 { transition-delay: 0.1s; } .delay-2 { transition-delay: 0.2s; } .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; } .delay-5 { transition-delay: 0.5s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--navy); padding: 1.5rem 8%; gap: 1.5rem; border-top: 1px solid rgba(201,168,76,0.15); }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { height: 280px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .tools-layout { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: 1fr; }
+    .exp-timeline::before { display: none; }
+    .exp-date-col { text-align: left; padding: 0 0 0.5rem 0; }
+    .exp-dot { display: none; }
+    .cs-grid { grid-template-columns: 1fr; }
+    .cs-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+    .cs-row2 { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
+    section { padding: 70px 6%; }
+    #home { padding: 100px 6% 80px; }
+  }
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">Divine<span>.</span></div>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#casestudy">Case Study</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Available for New Opportunities</div>
+    <h1 class="hero-name">Divine<br/><em>Udochukwu</em></h1>
+    <p class="hero-title">Customer Experience &amp; Product-Focused Support Specialist</p>
+    <p class="hero-headline">
+      I help companies improve <strong>user experience</strong>, <strong>product adoption</strong>,
+      and <strong>retention</strong> by turning customer insights into product improvements.
+    </p>
+    <div class="hero-ctas">
+      <a href="#casestudy" class="btn-primary">Explore My Work</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-card-main">
+        <div class="about-initial">D</div>
+        <div class="about-card-stat">95%</div>
+        <div class="about-card-stat-label">Customer Satisfaction Score</div>
+      </div>
+      <div class="about-card-accent">
+        <div class="about-card-accent-num">3+</div>
+        <div class="about-card-accent-label">Years in CX &amp; Product Support</div>
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">Where Support Meets<br/>Product Thinking</h2>
+      <div class="divider"></div>
+      <p>I'm a Customer Experience &amp; Product Support Specialist with 3+ years of experience helping SaaS and enterprise users succeed with products.</p>
+      <p>I go beyond handling tickets — I focus on how users experience the product and how that experience drives growth.</p>
+      <ul class="about-list">
+        <li>Drive product adoption and user activation</li>
+        <li>Identify friction points in the user journey</li>
+        <li>Translate customer feedback into product insights</li>
+        <li>Collaborate with Product, Engineering &amp; Growth teams</li>
+      </ul>
+      <div class="about-intersection">
+        <span class="intersection-tag tag-support">Support</span>
+        <span style="color:var(--text-mid);align-self:center;font-size:1.1rem;">×</span>
+        <span class="intersection-tag tag-product">Product</span>
+        <span style="color:var(--text-mid);align-self:center;font-size:1.1rem;">×</span>
+        <span class="intersection-tag tag-growth">Growth</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div class="section-tag">What I Do</div>
+    <h2 class="section-title light">Core Competencies</h2>
+    <div class="divider" style="margin:1.5rem auto 0"></div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal delay-1">
+      <div class="service-icon">🚀</div>
+      <div class="service-name">Customer Onboarding &amp; Activation</div>
+      <div class="service-desc">Designing structured onboarding experiences that move users from signup to meaningful product adoption quickly.</div>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="service-icon">📈</div>
+      <div class="service-name">Product Adoption &amp; Retention</div>
+      <div class="service-desc">Using data and user behavior to identify drop-off points and implement strategies that increase long-term engagement.</div>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="service-icon">🔧</div>
+      <div class="service-name">Technical Troubleshooting</div>
+      <div class="service-desc">Diagnosing and resolving complex product issues while clearly communicating solutions to both technical and non-technical users.</div>
+    </div>
+    <div class="service-card reveal delay-1">
+      <div class="service-icon">💡</div>
+      <div class="service-name">Customer Feedback → Product Insights</div>
+      <div class="service-desc">Synthesizing support data and user feedback into actionable product recommendations for engineering and product teams.</div>
+    </div>
+    <div class="service-card reveal delay-2">
+      <div class="service-icon">⚡</div>
+      <div class="service-name">Workflow Optimization</div>
+      <div class="service-desc">Building internal processes, knowledge bases, and escalation paths that improve team efficiency and reduce resolution time.</div>
+    </div>
+    <div class="service-card reveal delay-3">
+      <div class="service-icon">🤝</div>
+      <div class="service-name">Cross-functional Collaboration</div>
+      <div class="service-desc">Acting as the bridge between customers and internal teams — translating real-world user needs into prioritized product improvements.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-tag">Toolstack</div>
+  <h2 class="section-title">Tools I Work With</h2>
+  <div class="divider"></div>
+  <div class="tools-layout">
+    <div class="tool-group reveal delay-1">
+      <div class="tool-group-label">Support &amp; CRM</div>
+      <div class="tool-tags">
+        <span class="tool-tag">Zendesk</span>
+        <span class="tool-tag">Intercom</span>
+        <span class="tool-tag">HubSpot</span>
+        <span class="tool-tag">Salesforce</span>
+      </div>
+    </div>
+    <div class="tool-group reveal delay-2">
+      <div class="tool-group-label">Collaboration</div>
+      <div class="tool-tags">
+        <span class="tool-tag">Slack</span>
+        <span class="tool-tag">Microsoft Teams</span>
+        <span class="tool-tag">Trello</span>
+      </div>
+    </div>
+    <div class="tool-group reveal delay-3">
+      <div class="tool-group-label">Product &amp; Operations</div>
+      <div class="tool-tags">
+        <span class="tool-tag">Jira</span>
+        <span class="tool-tag">CRM Systems</span>
+      </div>
+    </div>
+    <div class="tool-group reveal delay-4">
+      <div class="tool-group-label">Data &amp; Analytics</div>
+      <div class="tool-tags">
+        <span class="tool-tag">Excel</span>
+        <span class="tool-tag">Dashboards</span>
+        <span class="tool-tag">Usage Analytics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-tag reveal">Experience</div>
+  <h2 class="section-title light reveal">Career Timeline</h2>
+  <div class="divider reveal"></div>
+
+  <div class="exp-grid">
+    <!-- Deel -->
+    <div class="exp-date-col reveal">
+      <div class="exp-dot"></div>
+      <div class="exp-date">Oct 2024<br/>— Oct 2025</div>
+    </div>
+    <div class="exp-content-col reveal delay-1">
+      <div class="exp-role">Client Support Specialist</div>
+      <div class="exp-company">Deel <span class="remote-badge">Remote</span></div>
+      <ul class="exp-list">
+        <li>Boosted user activation through structured onboarding and proactive guidance</li>
+        <li>Maintained 95% CSAT through consistent, high-quality customer interactions</li>
+        <li>Managed 50+ support tickets weekly with strong resolution efficiency</li>
+        <li>Delivered fast response and resolution times, exceeding team benchmarks</li>
+        <li>Shared recurring user pain points with Product &amp; Engineering for roadmap input</li>
+      </ul>
+    </div>
+    <!-- Access Pensions -->
+    <div class="exp-date-col reveal">
+      <div class="exp-dot"></div>
+      <div class="exp-date">Sept 2021<br/>— Dec 2022</div>
+    </div>
+    <div class="exp-content-col reveal delay-1">
+      <div class="exp-role">Customer Support Associate</div>
+      <div class="exp-company">Access Pensions</div>
+      <ul class="exp-list">
+        <li>Reduced average resolution time by 20% through improved ticket routing</li>
+        <li>Improved the onboarding experience for new pension customers</li>
+        <li>Increased overall team efficiency by 15% through process improvements</li>
+      </ul>
+    </div>
+    <!-- UBA -->
+    <div class="exp-date-col reveal">
+      <div class="exp-dot"></div>
+      <div class="exp-date">Feb 2020<br/>— Sept 2021</div>
+    </div>
+    <div class="exp-content-col reveal delay-1" style="border-bottom:none;">
+      <div class="exp-role">Customer Support Associate</div>
+      <div class="exp-company">UBA</div>
+      <ul class="exp-list">
+        <li>Reduced customer churn through proactive support and early issue detection</li>
+        <li>Built an internal knowledge base that contributed to a 30% reduction in repeat tickets</li>
+        <li>Consistently exceeded FCR, AHT, and NPS targets across performance cycles</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="casestudy">
+  <div class="cs-header reveal">
+    <div class="cs-label">📋 Featured Case Study</div>
+    <h2 class="cs-title">HealthHub — Remote Employee<br/>Healthcare Platform</h2>
+    <p class="cs-subtitle">A product thinking exercise exploring how remote-first teams access and manage healthcare benefits.</p>
+  </div>
+
+  <!-- Row 1: Problem + Solution + Mockup -->
+  <div class="cs-grid">
+    <div class="cs-card reveal delay-1">
+      <div class="cs-card-icon">🎯</div>
+      <div class="cs-card-title">The Problem</div>
+      <div class="cs-card-body">Remote employees across different countries struggled to access, understand, and use their healthcare benefits. Fragmented coverage, unclear processes, and lack of local support led to low utilization and employee frustration.</div>
+    </div>
+    <div class="cs-card reveal delay-2">
+      <div class="cs-card-icon">✅</div>
+      <div class="cs-card-title">The Solution</div>
+      <div class="cs-card-body">HealthHub centralizes benefits management in one platform — giving remote employees a unified view of their coverage, a way to find local providers, and in-app guidance to navigate claims and appointments without friction.</div>
+    </div>
+    <div class="cs-card reveal delay-3">
+      <div class="cs-card-icon">👤</div>
+      <div class="cs-card-title">My Role</div>
+      <div class="cs-card-body">As a Product Support Specialist embedded in the product process, I defined user personas, mapped friction points, contributed to feature requirements, and proposed product improvements based on real support patterns.</div>
+    </div>
+    <div class="cs-card featured reveal">
+      <div>
+        <div class="cs-card-title">Platform Preview</div>
+        <div class="cs-card-body" style="margin-bottom:1.2rem;">A unified dashboard for remote employees to track benefits, find providers, and manage claims — built to eliminate confusion and reduce support tickets.</div>
+      </div>
+      <div class="cs-mockup">
+        <div class="mockup-bar">
+          <div class="mockup-dot red"></div>
+          <div class="mockup-dot yellow"></div>
+          <div class="mockup-dot green"></div>
+        </div>
+        <div class="mockup-content">
+          <div class="mockup-line w90"></div>
+          <div class="mockup-line w70"></div>
+          <div class="mockup-line w80"></div>
+          <div class="mockup-cards">
+            <div class="mockup-card-mini"></div>
+            <div class="mockup-card-mini"></div>
+            <div class="mockup-card-mini"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="cs-card-title">Target Users</div>
+        <div class="cs-card-body">Remote employees at globally distributed companies who lack HR proximity; mid-to-senior professionals managing personal and family healthcare across borders.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Persona -->
+  <div class="persona-card reveal">
+    <div class="persona-avatar">SJ</div>
+    <div>
+      <div class="persona-name">Sarah Johnson</div>
+      <div class="persona-role">Remote Marketing Manager, 34 — Based in Lagos, employed by a UK firm</div>
+      <div class="persona-goals">
+        <span class="persona-goal-tag">Wants clear benefits overview</span>
+        <span class="persona-goal-tag">Needs local provider access</span>
+        <span class="persona-goal-tag">Frustrated by slow claims</span>
+        <span class="persona-goal-tag">Values fast support</span>
+        <span class="persona-goal-tag">Uses mobile-first</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2: Features + Improvements + Learnings -->
+  <div class="cs-row2">
+    <div class="cs-card reveal delay-1">
+      <div class="cs-card-icon">⚙️</div>
+      <div class="cs-card-title">Key Features</div>
+      <ul class="feature-list">
+        <li><span class="fi">🗺️</span> Unified benefits dashboard with coverage breakdown</li>
+        <li><span class="fi">📍</span> Local provider directory with real-time availability</li>
+        <li><span class="fi">📋</span> In-app claim submission &amp; status tracking</li>
+        <li><span class="fi">💬</span> Live support chat with escalation to human agents</li>
+        <li><span class="fi">🔔</span> Smart notifications for renewals and claim updates</li>
+      </ul>
+    </div>
+    <div class="cs-card reveal delay-2">
+      <div class="cs-card-icon">🔄</div>
+      <div class="cs-card-title">Product Improvements I Contributed</div>
+      <ul class="feature-list">
+        <li><span class="fi">📉</span> Identified claim-step drop-off → simplified 5-step flow to 2</li>
+        <li><span class="fi">📖</span> Proposed onboarding checklist → reduced first-week support tickets</li>
+        <li><span class="fi">🌍</span> Flagged language gap → team added multi-region content</li>
+        <li><span class="fi">📊</span> Created feedback loop with Product team using CSAT + ticket trends</li>
+      </ul>
+    </div>
+    <div class="cs-card dark reveal delay-3" style="grid-column:span 2;">
+      <div class="cs-card-icon">💡</div>
+      <div class="cs-card-title">What I Learned</div>
+      <div class="cs-card-body">This exercise reinforced that the best product improvements often come from support data — not assumptions. When I mapped support ticket themes to specific product screens, patterns emerged that engineering didn't have visibility into. Being in that middle space — understanding both the user's language and the product's architecture — is where I add the most value.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-tag" style="text-align:center">What Others Say</div>
+  <h2 class="section-title light" style="text-align:center">Testimonials</h2>
+  <div class="divider" style="margin:1.5rem auto 0"></div>
+  <div class="testi-grid">
+    <div class="testi-card reveal delay-1">
+      <div class="testi-quote">"</div>
+      <div class="testi-text">Divine consistently delivered above our CSAT benchmarks. What stood out was her ability to handle difficult situations calmly while keeping the customer experience front and center. She's the kind of person you want interfacing with your most important clients.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">AO</div>
+        <div>
+          <div class="testi-name">Adaeze Okonkwo</div>
+          <div class="testi-role">Support Team Lead</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal delay-2">
+      <div class="testi-quote">"</div>
+      <div class="testi-text">Working alongside Divine was genuinely collaborative. She was always willing to share context from customer interactions that helped the rest of us do our jobs better. She has a natural ability to make complex issues feel manageable.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">KN</div>
+        <div>
+          <div class="testi-name">Kofi Nkrumah</div>
+          <div class="testi-role">Senior Support Specialist</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal delay-3">
+      <div class="testi-quote">"</div>
+      <div class="testi-text">Divine brought something valuable to our product feedback process — she could translate what users were experiencing into clear, specific patterns we could actually act on. Her input directly influenced changes in our onboarding flow.</div>
+      <div class="testi-author">
+        <div class="testi-avatar">TE</div>
+        <div>
+          <div class="testi-name">Tunde Emeka</div>
+          <div class="testi-role">Product Operations Manager</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-header">
+    <div class="section-tag">Capabilities</div>
+    <h2 class="section-title">Skills &amp; Expertise</h2>
+    <div class="divider" style="margin:1.5rem auto 0"></div>
+  </div>
+  <div class="skills-cloud reveal">
+    <span class="skill-badge dark">Product Management</span>
+    <span class="skill-badge gold">User Research</span>
+    <span class="skill-badge outline">Product Strategy</span>
+    <span class="skill-badge dark">UX Thinking</span>
+    <span class="skill-badge outline">Customer Experience</span>
+    <span class="skill-badge gold">Cross-team Collaboration</span>
+    <span class="skill-badge outline">Onboarding Design</span>
+    <span class="skill-badge dark">Feedback Synthesis</span>
+    <span class="skill-badge outline">CSAT &amp; NPS</span>
+    <span class="skill-badge gold">Retention Strategy</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-content">
+    <div class="contact-availability reveal">Open to Opportunities</div>
+    <h2 class="contact-cta-text reveal delay-1">
+      Open to <em>Customer Experience</em>, Product Support &amp; Entry-Level <em>Product Management</em> roles
+    </h2>
+    <p class="contact-desc reveal delay-2">Let's talk about how I can help your team improve user experience, drive adoption, and turn customer insight into product growth.</p>
+    <div class="contact-links reveal delay-3">
+      <a href="mailto:chinenyeadivine@gmail.com" class="contact-link email">
+        <span>✉</span> chinenyeadivine@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/chinenye-udochukwu/" target="_blank" class="contact-link linkedin">
+        <span>in</span> LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Divine <span>Udochukwu</span> — Customer Experience &amp; Product-Focused Support Specialist</div>
+  <div class="footer-copy">© 2025 All rights reserved</div>
+</footer>
+
+<script>
+  // Hamburger
+  function toggleMenu() {
+    document.getElementById('navlinks').classList.toggle('open');
+  }
+  // Close on link click
+  document.querySelectorAll('#navlinks a').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('navlinks').classList.remove('open');
+  }));
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
