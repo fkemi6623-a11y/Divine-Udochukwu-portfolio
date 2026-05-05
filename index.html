@@ -506,6 +506,8 @@
     .exp-card { grid-template-columns: 1fr; gap: 1.2rem; }
     .exp-date-box { display: inline-flex; gap: 8px; align-items: center; width: auto; }
     .exp-date-sep { width: 1px; height: 14px; margin: 0; }
+    .cs-featured-top { grid-template-columns: 1fr; }
+    .cs-featured-info { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
   }
 
   /* ── CASE STUDY ── */
@@ -1034,50 +1036,59 @@
   <h2 class="section-title light reveal">Career Timeline</h2>
   <div class="divider reveal"></div>
 
-  <div class="exp-grid">
+  <div class="exp-stack">
     <!-- Deel -->
-    <div class="exp-date-col reveal">
-      <div class="exp-dot"></div>
-      <div class="exp-date">Oct 2024<br/>— Oct 2025</div>
-    </div>
-    <div class="exp-content-col reveal delay-1">
-      <div class="exp-role">Client Support Specialist</div>
-      <div class="exp-company">Deel <span class="remote-badge">Remote</span></div>
-      <ul class="exp-list">
-        <li>Boosted user activation through structured onboarding and proactive guidance</li>
-        <li>Maintained 95% CSAT through consistent, high-quality customer interactions</li>
-        <li>Managed 50+ support tickets weekly with strong resolution efficiency</li>
-        <li>Delivered fast response and resolution times, exceeding team benchmarks</li>
-        <li>Shared recurring user pain points with Product &amp; Engineering for roadmap input</li>
-      </ul>
+    <div class="exp-card reveal">
+      <div class="exp-date-box">
+        <span class="exp-date-from">Oct 2024</span>
+        <span class="exp-date-sep"></span>
+        <span class="exp-date-to">Oct 2025</span>
+      </div>
+      <div>
+        <div class="exp-role">Client Support Specialist</div>
+        <div class="exp-company">Deel <span class="remote-badge">Remote</span></div>
+        <ul class="exp-list">
+          <li>Boosted user activation through structured onboarding and proactive guidance</li>
+          <li>Maintained 95% CSAT through consistent, high-quality customer interactions</li>
+          <li>Managed 50+ support tickets weekly with strong resolution efficiency</li>
+          <li>Delivered fast response and resolution times, exceeding team benchmarks</li>
+          <li>Shared recurring user pain points with Product &amp; Engineering for roadmap input</li>
+        </ul>
+      </div>
     </div>
     <!-- Access Pensions -->
-    <div class="exp-date-col reveal">
-      <div class="exp-dot"></div>
-      <div class="exp-date">Sept 2021<br/>— Dec 2022</div>
-    </div>
-    <div class="exp-content-col reveal delay-1">
-      <div class="exp-role">Customer Support Associate</div>
-      <div class="exp-company">Access Pensions</div>
-      <ul class="exp-list">
-        <li>Reduced average resolution time by 20% through improved ticket routing</li>
-        <li>Improved the onboarding experience for new pension customers</li>
-        <li>Increased overall team efficiency by 15% through process improvements</li>
-      </ul>
+    <div class="exp-card reveal delay-1">
+      <div class="exp-date-box">
+        <span class="exp-date-from">Sept 2021</span>
+        <span class="exp-date-sep"></span>
+        <span class="exp-date-to">Dec 2022</span>
+      </div>
+      <div>
+        <div class="exp-role">Customer Support Associate</div>
+        <div class="exp-company">Access Pensions</div>
+        <ul class="exp-list">
+          <li>Reduced average resolution time by 20% through improved ticket routing</li>
+          <li>Improved the onboarding experience for new pension customers</li>
+          <li>Increased overall team efficiency by 15% through process improvements</li>
+        </ul>
+      </div>
     </div>
     <!-- UBA -->
-    <div class="exp-date-col reveal">
-      <div class="exp-dot"></div>
-      <div class="exp-date">Feb 2020<br/>— Sept 2021</div>
-    </div>
-    <div class="exp-content-col reveal delay-1" style="border-bottom:none;">
-      <div class="exp-role">Customer Support Associate</div>
-      <div class="exp-company">UBA</div>
-      <ul class="exp-list">
-        <li>Reduced customer churn through proactive support and early issue detection</li>
-        <li>Built an internal knowledge base that contributed to a 30% reduction in repeat tickets</li>
-        <li>Consistently exceeded FCR, AHT, and NPS targets across performance cycles</li>
-      </ul>
+    <div class="exp-card reveal delay-2">
+      <div class="exp-date-box">
+        <span class="exp-date-from">Feb 2020</span>
+        <span class="exp-date-sep"></span>
+        <span class="exp-date-to">Sept 2021</span>
+      </div>
+      <div>
+        <div class="exp-role">Customer Support Associate</div>
+        <div class="exp-company">UBA</div>
+        <ul class="exp-list">
+          <li>Reduced customer churn through proactive support and early issue detection</li>
+          <li>Built an internal knowledge base that contributed to a 30% reduction in repeat tickets</li>
+          <li>Consistently exceeded FCR, AHT, and NPS targets across performance cycles</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -1108,28 +1119,58 @@
       <div class="cs-card-body">As a Product Support Specialist embedded in the product process, I defined user personas, mapped friction points, contributed to feature requirements, and proposed product improvements based on real support patterns.</div>
     </div>
     <div class="cs-card featured reveal">
-      <div>
-        <div class="cs-card-title">Platform Preview</div>
-        <div class="cs-card-body" style="margin-bottom:1.2rem;">A unified dashboard for remote employees to track benefits, find providers, and manage claims — built to eliminate confusion and reduce support tickets.</div>
-      </div>
-      <div class="cs-mockup">
-        <div class="mockup-bar">
-          <div class="mockup-dot red"></div>
-          <div class="mockup-dot yellow"></div>
-          <div class="mockup-dot green"></div>
+      <div class="cs-featured-top">
+        <div class="cs-featured-info">
+          <div class="cs-card-icon">🖥️</div>
+          <div class="cs-card-title">Platform Preview</div>
+          <div class="cs-card-body">A unified dashboard for remote employees to track benefits, find providers, and manage claims — built to eliminate confusion and reduce support tickets.</div>
         </div>
-        <div class="mockup-content">
-          <div class="mockup-line w90"></div>
-          <div class="mockup-line w70"></div>
-          <div class="mockup-line w80"></div>
-          <div class="mockup-cards">
-            <div class="mockup-card-mini"></div>
-            <div class="mockup-card-mini"></div>
-            <div class="mockup-card-mini"></div>
+        <div class="cs-featured-mockup-wrap">
+          <div class="cs-mockup">
+            <div class="mockup-titlebar">
+              <div class="mockup-dots">
+                <div class="mockup-dot red"></div>
+                <div class="mockup-dot yellow"></div>
+                <div class="mockup-dot green"></div>
+              </div>
+              <div class="mockup-url">healthhub.app/dashboard</div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-sidebar-layout">
+                <div class="mockup-sidebar">
+                  <div class="mockup-nav-item active"></div>
+                  <div class="mockup-nav-item"></div>
+                  <div class="mockup-nav-item"></div>
+                  <div class="mockup-nav-item"></div>
+                  <div class="mockup-nav-item"></div>
+                </div>
+                <div class="mockup-main">
+                  <div class="mockup-stat-row">
+                    <div class="mockup-stat"><div class="mockup-stat-val"></div><div class="mockup-stat-lbl"></div></div>
+                    <div class="mockup-stat"><div class="mockup-stat-val" style="width:40%;background:rgba(245,240,232,0.25)"></div><div class="mockup-stat-lbl"></div></div>
+                    <div class="mockup-stat"><div class="mockup-stat-val" style="width:70%"></div><div class="mockup-stat-lbl"></div></div>
+                  </div>
+                  <div class="mockup-chart">
+                    <div class="mockup-bar-item" style="height:40%"></div>
+                    <div class="mockup-bar-item" style="height:60%"></div>
+                    <div class="mockup-bar-item hi" style="height:85%"></div>
+                    <div class="mockup-bar-item" style="height:55%"></div>
+                    <div class="mockup-bar-item hi" style="height:75%"></div>
+                    <div class="mockup-bar-item" style="height:50%"></div>
+                    <div class="mockup-bar-item hi" style="height:90%"></div>
+                  </div>
+                  <div class="mockup-list-row">
+                    <div class="mockup-list-item"></div>
+                    <div class="mockup-list-item" style="width:85%"></div>
+                    <div class="mockup-list-item" style="width:70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div>
+      <div class="cs-featured-bottom">
         <div class="cs-card-title">Target Users</div>
         <div class="cs-card-body">Remote employees at globally distributed companies who lack HR proximity; mid-to-senior professionals managing personal and family healthcare across borders.</div>
       </div>
@@ -1193,9 +1234,9 @@
       <div class="testi-quote">"</div>
       <div class="testi-text">Divine consistently delivered above our CSAT benchmarks. What stood out was her ability to handle difficult situations calmly while keeping the customer experience front and center. She's the kind of person you want interfacing with your most important clients.</div>
       <div class="testi-author">
-        <div class="testi-avatar">AO</div>
+        <div class="testi-avatar">LI</div>
         <div>
-          <div class="testi-name">Adaeze Okonkwo</div>
+          <div class="testi-name">Linda Ike</div>
           <div class="testi-role">Support Team Lead</div>
         </div>
       </div>
@@ -1204,9 +1245,9 @@
       <div class="testi-quote">"</div>
       <div class="testi-text">Working alongside Divine was genuinely collaborative. She was always willing to share context from customer interactions that helped the rest of us do our jobs better. She has a natural ability to make complex issues feel manageable.</div>
       <div class="testi-author">
-        <div class="testi-avatar">KN</div>
+        <div class="testi-avatar">QB</div>
         <div>
-          <div class="testi-name">Kofi Nkrumah</div>
+          <div class="testi-name">Qazeem Bello</div>
           <div class="testi-role">Senior Support Specialist</div>
         </div>
       </div>
@@ -1215,9 +1256,9 @@
       <div class="testi-quote">"</div>
       <div class="testi-text">Divine brought something valuable to our product feedback process — she could translate what users were experiencing into clear, specific patterns we could actually act on. Her input directly influenced changes in our onboarding flow.</div>
       <div class="testi-author">
-        <div class="testi-avatar">TE</div>
+        <div class="testi-avatar">PU</div>
         <div>
-          <div class="testi-name">Tunde Emeka</div>
+          <div class="testi-name">Precious Udechukwu</div>
           <div class="testi-role">Product Operations Manager</div>
         </div>
       </div>
